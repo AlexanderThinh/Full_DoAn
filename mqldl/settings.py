@@ -27,13 +27,14 @@ SECRET_KEY = 'django-insecure-cf%xsqiu&5t6hu^iissnwj3ydr6j&6)y4zf8nhwxzc*0kr+i+k
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['qldl-app.herokuapp.com']
 CORS_ALLOW_ALL_ORIGINS = True
 # CORS_ALLOWED_ORIGINS = ['http://127.0.0.1:3000']
 AUTH_USER_MODEL = 'qldl.User'
 STATIC_URL = '/static/'
 MEDIA_ROOT = '%s/qldl/static/' % BASE_DIR
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 # STATICFILES_DIRS=(
 #     os.path.join(BASE_DIR, 'static'),
