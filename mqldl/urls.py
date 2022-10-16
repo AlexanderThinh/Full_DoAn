@@ -38,7 +38,7 @@ schema_view = get_schema_view(
 urlpatterns = [
     path('', include('qldl.urls')),
     path('admin/', admin.site.urls),
-    re_path('.*', TemplateView.as_view(template_name='index.html'))
+    re_path('.*', TemplateView.as_view(template_name='index.html')),
 
     re_path(r'^swagger(?P<format>\.json|\.yaml)$',
         schema_view.without_ui(cache_timeout=0),
