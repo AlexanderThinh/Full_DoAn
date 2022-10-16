@@ -1,3 +1,4 @@
+
 """mqldl URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -18,6 +19,7 @@ from django.urls import path, re_path, include
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
+from django.views.generic import TemplateView
 
 
 schema_view = get_schema_view(
@@ -36,6 +38,7 @@ schema_view = get_schema_view(
 urlpatterns = [
     path('', include('qldl.urls')),
     path('admin/', admin.site.urls),
+    re_path('.*', TemplateView.as_view(template_name='index.html'))
 
     re_path(r'^swagger(?P<format>\.json|\.yaml)$',
         schema_view.without_ui(cache_timeout=0),

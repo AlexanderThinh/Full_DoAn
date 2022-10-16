@@ -32,6 +32,10 @@ CORS_ALLOW_ALL_ORIGINS = True
 # CORS_ALLOWED_ORIGINS = ['http://127.0.0.1:3000']
 AUTH_USER_MODEL = 'qldl.User'
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'build/static'),
+]
+
 MEDIA_ROOT = '%s/qldl/static/' % BASE_DIR
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
@@ -88,7 +92,7 @@ ROOT_URLCONF = 'mqldl.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'build')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
