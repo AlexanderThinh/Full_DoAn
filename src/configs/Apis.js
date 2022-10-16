@@ -22,8 +22,8 @@ let endpoints = {
 }
 
 export default axios.create({
-  baseURL: 'https://alexanderthinh.pythonanywhere.com/'
-  // baseURL: 'http://localhost:8000/'
+  // baseURL: 'https://alexanderthinh.pythonanywhere.com/'
+  baseURL: 'http://localhost:8000/'
 })
 
 export { endpoints }
